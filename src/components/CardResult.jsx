@@ -1,6 +1,6 @@
 const CardResult = ({ userImage, userName, userBio }) => {
     return (
-        <div className="flex gap-4 items-center">
+        <div className="flex flex-col md:flex-row gap-4 items-center">
             <div className="w-[220px] h-[220px] flex items-center">
                 <img src={userImage} alt="user image" className="rounded-full" />
             </div>
