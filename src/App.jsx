@@ -18,15 +18,9 @@ function App() {
         e.preventDefault();
         setError(null);
         setHasSearched(true);
-        const token = import.meta.env.VITE_GITHUB_TOKEN || '';
 
         try {
-            const response = await fetch(`https://api.github.com/users/${searchedUsername}`, {
-                headers: {
-                    Accept: 'application/vnd.github.v3+json',
-                    authorization: `Bearer ${token}`,
-                },
-            });
+            const response = await fetch(`https://api.github.com/users/${searchedUsername}`);
 
             if (response.status === 404) {
                 throw new Error('Nenhum perfil foi encontrado com esse nome de usuário. Tente novamente');
